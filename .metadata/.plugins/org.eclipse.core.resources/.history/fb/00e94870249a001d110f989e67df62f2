@@ -1,0 +1,9 @@
+package com.pkware.practice;
+
+public class AbstractClassesProgram {
+
+	public static void main(String[] args) {
+
+	}
+
+}

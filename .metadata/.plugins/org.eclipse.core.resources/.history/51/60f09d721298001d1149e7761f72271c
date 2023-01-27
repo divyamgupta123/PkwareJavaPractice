@@ -1,0 +1,29 @@
+package com.pkware.practice;
+
+public class StringsPrac {
+	public static void main(String[] args) {
+		char data[] = {'a','b'};
+		System.out.println(data);
+		String charArr = new String(data,1,1);
+		System.out.println(charArr);
+		
+		
+		String test1 = new String("Divyam");
+		String test2 = "Divyam";
+		System.out.println(test1.compareTo("divyam"));
+		System.out.println(test1.compareToIgnoreCase("divyam"));
+		System.out.println(test1.compareTo(test2));
+		
+		
+		System.out.println(test1.concat(test2));
+		System.out.println(test1.contains("div"));
+		System.out.println(test1.contains("vyam"));
+		
+		
+		char data2[] = {'G','u','p','t','a'};
+		System.out.println(String.copyValueOf(data2));
+		
+		String test3 = new String(data2);
+		System.out.println(test3.endsWith("ta"));
+	}
+}

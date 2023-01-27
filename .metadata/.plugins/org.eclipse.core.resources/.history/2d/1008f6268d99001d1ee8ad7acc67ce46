@@ -1,0 +1,76 @@
+package practice;
+
+class Node{
+	int data;
+	Node next;
+	
+	Node(int data){
+		this.data = data;
+		this.next = null;
+	}
+}
+
+class LinkedList{
+	private Node head;
+	
+	LinkedList(){
+		head = null;
+	}
+	
+	void insertAtBeg(int val) {
+		if(head==null) {
+			head = new Node(val);
+		}
+		else {
+			Node tmp = head;
+			head = new Node(val);
+			head.next = tmp;
+		}
+	}
+	
+	void insertAtEnd(int val) {
+		if(head == null) {
+			head = new Node(val);
+			return;
+		}
+		Node tmp = head;
+		while(tmp.next!=null) {
+			tmp = tmp.next;
+		}
+		tmp.next = new Node(val);
+	}
+	
+	void insertAtPos(int val,int pos){
+		if(pos>getLength()) {
+			System.out.println("Position value is greater than length");
+			return;
+		}
+		if(pos == 0) {
+			System.out.println("Position shouls be greater than 1");
+			return;
+		}
+		
+		Node tmp = new Node(val);
+		for(int i=0;i<pos-1;i++) {
+			tmp = tmp.next;
+		}
+		
+	}
+	
+	int getLength() {
+		int len = 0;
+		Node tmp = head;
+		while(tmp != null) {
+			len++;
+			tmp = tmp.next;
+		}
+		return len;
+	}
+	
+}
+
+public class LinkedListProgram {
+	public static void main(String[] args) {
+		
+	}
+}

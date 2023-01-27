@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.lang.CharSequence"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="java.lang.StringBuffer"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.lang.Math"/>
+    <fullyQualifiedTypeName name="practice.LinkedList"/>
+    <fullyQualifiedTypeName name="com.pkware.practice.BoxWeight"/>
+    <fullyQualifiedTypeName name="java.lang.Readable"/>
+    <fullyQualifiedTypeName name="com.pkware.practice.Triangle"/>
+    <fullyQualifiedTypeName name="com.pkware.practice.Rectangle"/>
+    <fullyQualifiedTypeName name="practice.BinaryTree"/>
+    <fullyQualifiedTypeName name="practice.BTNode"/>
+    <fullyQualifiedTypeName name="practice.BTSNode"/>
+    <fullyQualifiedTypeName name="practice.BSTNode"/>
+    <fullyQualifiedTypeName name="practice.BinarySearchTree"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+</qualifiedTypeNameHistroy>

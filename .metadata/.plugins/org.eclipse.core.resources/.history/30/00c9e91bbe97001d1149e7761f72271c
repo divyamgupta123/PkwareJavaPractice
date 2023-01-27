@@ -1,0 +1,13 @@
+
+public class test {
+
+	public static void main() {
+		
+		int num = 100;
+		System.out.println("Number defined - " + num);
+		num = num*100;
+		System.out.println("num - " + num);
+		
+	}
+
+}

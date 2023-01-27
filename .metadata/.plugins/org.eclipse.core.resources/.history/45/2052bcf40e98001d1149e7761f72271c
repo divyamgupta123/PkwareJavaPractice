@@ -1,0 +1,12 @@
+package com.pkware.practice;
+
+public class StringsPrac {
+	public static void main(String[] args) {
+		char data[] = {'a','b'};
+		System.out.println(data);
+		String charArr = new String(data,1,1);
+		System.out.println(charArr.charAt(0));
+		
+	}
+}
+ 

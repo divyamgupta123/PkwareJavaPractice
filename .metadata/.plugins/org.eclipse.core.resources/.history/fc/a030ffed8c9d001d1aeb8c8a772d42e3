@@ -1,0 +1,22 @@
+package com.pkware.accmod;
+
+
+public class AccessModifiersPractice {
+	void displayDefaultMethod() {
+		System.out.println("I am in Default Method");
+	}
+	private void displayPrivateMethod() {
+		System.out.println("I am in Private Method");
+	}
+	protected void displayProctectedMethod() {
+		System.out.println("I am in Protected Method");
+	}
+	public void displayPublicMethod() {
+		System.out.println("I am in Public Method");
+	}
+	
+	public static void main(String[] args) {
+		
+	}
+	
+}
