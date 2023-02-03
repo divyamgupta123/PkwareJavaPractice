@@ -33,6 +33,7 @@ public class AccModImportClass {
 		System.out.println();
 		System.out.println("Public Method accessible without extending too");
 		obj1.displayPublicMethod();
-		
+
+//		obj1.displayProctectedMethod();
 	}
 }

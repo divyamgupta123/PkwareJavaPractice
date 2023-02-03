@@ -4,9 +4,7 @@
     <fullyQualifiedTypeName name="java.lang.System"/>
     <fullyQualifiedTypeName name="java.lang.StringBuffer"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
-    <fullyQualifiedTypeName name="java.lang.Math"/>
     <fullyQualifiedTypeName name="practice.LinkedList"/>
-    <fullyQualifiedTypeName name="com.pkware.practice.BoxWeight"/>
     <fullyQualifiedTypeName name="java.lang.Readable"/>
     <fullyQualifiedTypeName name="com.pkware.practice.Triangle"/>
     <fullyQualifiedTypeName name="com.pkware.practice.Rectangle"/>
@@ -17,4 +15,21 @@
     <fullyQualifiedTypeName name="practice.BinarySearchTree"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="com.pkware.accmod.ChildClass"/>
+    <fullyQualifiedTypeName name="com.pkware.accmod.SuperClass"/>
+    <fullyQualifiedTypeName name="com.pkware.practice.AccModImportClass"/>
+    <fullyQualifiedTypeName name="com.pkware.accmod.AccessModifiersPractice"/>
+    <fullyQualifiedTypeName name="java.lang.Character"/>
+    <fullyQualifiedTypeName name="java.lang.Double"/>
+    <fullyQualifiedTypeName name="com.pkware.practice.Company"/>
+    <fullyQualifiedTypeName name="java.lang.Math"/>
+    <fullyQualifiedTypeName name="java.lang.Number"/>
+    <fullyQualifiedTypeName name="com.pkware.practice.Numbers"/>
+    <fullyQualifiedTypeName name="java.lang.InstantiationError"/>
+    <fullyQualifiedTypeName name="javax.management.InstanceAlreadyExistsException"/>
+    <fullyQualifiedTypeName name="com.pkware.practice.SingletonClass"/>
+    <fullyQualifiedTypeName name="com.pkware.practice.BoxWeight"/>
+    <fullyQualifiedTypeName name="java.lang.Override"/>
+    <fullyQualifiedTypeName name="com.pkware.practice.NewBox"/>
+    <fullyQualifiedTypeName name="com.pkware.practice.NewBoxWeight"/>
 </qualifiedTypeNameHistroy>

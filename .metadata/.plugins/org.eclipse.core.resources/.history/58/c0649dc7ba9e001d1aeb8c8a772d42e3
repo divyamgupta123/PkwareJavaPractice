@@ -1,0 +1,7 @@
+package com.pkware.practice;
+
+public class SingeltonClassProgram {
+	public static void main(String[] args) {
+		
+	}
+}
