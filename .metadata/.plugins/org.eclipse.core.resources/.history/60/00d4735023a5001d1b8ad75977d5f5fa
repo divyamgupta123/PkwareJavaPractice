@@ -1,0 +1,9 @@
+package com.pkware.practice;
+
+public class MarkerInterfacesProgram {
+
+	public static void main(String[] args) {
+
+	}
+
+}

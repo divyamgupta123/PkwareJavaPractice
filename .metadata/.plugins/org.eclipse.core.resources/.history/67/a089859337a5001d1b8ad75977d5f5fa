@@ -1,0 +1,15 @@
+package com.pkware.practice;
+
+enum Directions{
+	North,
+	South,
+	West,
+	East
+}
+
+public class EnumsProgram {
+	public static void main(String[] args) {
+		System.out.println((Object)Directions.valueOf("North").getClass().getSimpleName());
+		
+	}
+}

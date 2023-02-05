@@ -1,0 +1,13 @@
+package com.pkware.practice;
+
+interface Polygon{
+	
+}
+
+public class InterfacesPracticeProgram {
+
+	public static void main(String[] args) {
+
+	}
+
+}
