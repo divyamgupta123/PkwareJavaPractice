@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.pkware.practice.ExceptionHandlingPrograms&apos; to &apos;ExceptionHandlingProgram&apos;&#x0D;&#x0A;- Original project: &apos;TestProject&apos;&#x0D;&#x0A;- Original element: &apos;com.pkware.practice.ExceptionHandlingPrograms&apos;&#x0D;&#x0A;- Renamed element: &apos;com.pkware.practice.ExceptionHandlingProgram&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;ExceptionHandlingPrograms&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.pkware.practice{ExceptionHandlingPrograms.java[ExceptionHandlingPrograms" matchStrategy="1" name="ExceptionHandlingProgram" qualified="false" references="true" similarDeclarations="false" stamp="1675601655767" textual="false" version="1.0"/>
+</session>

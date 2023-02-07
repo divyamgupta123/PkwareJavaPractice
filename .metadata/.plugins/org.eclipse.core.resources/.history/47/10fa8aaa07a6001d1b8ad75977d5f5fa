@@ -1,0 +1,39 @@
+package com.pkware.collectionsframework.listsinterface;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ArrayListProgram {
+	public static void main(String[] args) {
+		//initializing array list
+		List<Integer> lst = new ArrayList<>();
+		List<Integer> tmp = new ArrayList<>();
+		
+		System.out.println("Initial size of Array List - "+lst.size());
+		
+		//adding elements
+		
+		for(int i=0;i<4;i++) {
+			lst.add(i+1);
+		}
+		
+		lst.add(4,5);
+		
+		tmp.add(6);
+		tmp.add(7);
+		
+		lst.addAll(5,tmp);
+		
+		System.out.println("Array list affter adding elements - "+lst);
+		
+		
+		//changing elements;
+		
+		for(int i=0;i<lst.size();i++) {
+			lst.set(i, (i+1)+(i+1));
+		}
+		
+		System.out.println("Array list affter changing elements - "+lst);
+		
+	}
+}

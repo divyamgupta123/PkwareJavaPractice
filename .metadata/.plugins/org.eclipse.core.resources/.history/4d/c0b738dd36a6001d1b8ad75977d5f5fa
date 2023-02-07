@@ -1,0 +1,11 @@
+package com.pkware.collectionsframework.listsinterface;
+
+import java.util.Vector;
+
+public class VectorProgram {
+
+	public static void main(String[] args) {
+		Vector<Integer> vct = new Vector<>();
+	}
+
+}

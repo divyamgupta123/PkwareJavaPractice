@@ -1,0 +1,20 @@
+package com.pkware.collectionsframework.listsinterface;
+
+import java.util.Vector;
+
+public class VectorProgram {
+
+	public static void main(String[] args) {
+		Vector<Integer> vct = new Vector<>(2,2);
+		
+		System.out.println("Initial Capacity - "+vct.capacity());
+		System.out.println("Initial size - "+vct.size());
+		
+		for(int i=1;i<=7;i++) {
+			vct.add(i*i);
+			System.out.println("Capacity after "+i+" elements - "+vct.capacity());
+			System.out.println("Size after "+i+" elements - "+vct.size());
+		}
+	}
+
+}
