@@ -1,9 +1,0 @@
-package com.pkware.practice;
-
-class Sin
-
-public class SingeltonClassProgram {
-	public static void main(String[] args) {
-		
-	}
-}

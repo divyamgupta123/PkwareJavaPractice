@@ -1,0 +1,7 @@
+package com.pkware.collectionsframework.listsinterface;
+
+public class StackClassProgram {
+	public static void main(String[] args) {
+		
+	}
+}

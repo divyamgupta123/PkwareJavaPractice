@@ -7,7 +7,7 @@ final class FinalClass{
 	}
 }
 
-//class FinalMethodClass extends FinalClass
+//error - class FinalMethodClass extends FinalClass
 class FinalMethodClass{
 	final void show() {
 		System.out.println("I am in Final method class");
@@ -22,8 +22,7 @@ class NormalClass extends FinalMethodClass{
 //	}
 	
 	final int x = 10;
-	
-	
+
 	void showNormalClass(){
 		System.out.println("I am in Normal Class");
 	}
