@@ -27,7 +27,7 @@ public class VectorProgram {
 		
 		//removing elements
 		vct.remove(vct.size()-2);
-		vct.remove(new Integer(1));
+		vct.remove(Integer.valueOf(1));
 		System.out.println("Vector after removing element - "+vct);
 		
 		// contains method

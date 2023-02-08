@@ -35,7 +35,7 @@ public class ArrayListProgram implements Cloneable {
 		
 		//removing elements
 		lst.remove(lst.size()-1); //index as parameter
-		lst.remove(new Integer(4)); //object as a parameter
+		lst.remove(Integer.valueOf(4)); //object as a parameter
 		System.out.println("Array list after removing elements - "+lst);
 		
 		ArrayList<Integer> tmpLst = (ArrayList<Integer>)lst.clone();
@@ -54,7 +54,7 @@ public class ArrayListProgram implements Cloneable {
 		//isEmpty 
 		System.out.println("Array list is empty - "+lst.isEmpty());
 		
-		//removeif 
+		//remove if 
 		lst.removeIf(n->(n%2==0));
 		System.out.println("List after remove if - "+lst);
 		

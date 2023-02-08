@@ -20,6 +20,11 @@ class ComputerDivision {
 }
 
 class UserDefinedExp extends Exception {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public UserDefinedExp() {}
 
 	UserDefinedExp(String s) {
@@ -58,7 +63,6 @@ public class ExceptionHandlingProgram {
 		System.out.println();
 		System.out.println("Multiple Exception Handling");
 
-		String name = "Divyam";
 		int choice = -1;
 		Scanner scan = new Scanner(System.in);
 		do {
@@ -129,6 +133,7 @@ public class ExceptionHandlingProgram {
 			e.printStackTrace();
 		} finally {
 			System.out.println("Finally block executed");
+			scan.close();
 		}
 
 		// Throws Example

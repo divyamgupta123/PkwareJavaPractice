@@ -1,0 +1,30 @@
+package com.pkware.collectionsframework.queueinterface;
+
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.List;
+
+public class ArrayDequeueProgram {
+
+	public static void main(String[] args) {
+		List<Integer> lst = new ArrayList<>();
+		for(int i=0;i<5;i++) {
+			lst.add(i);
+		}
+		
+		ArrayDeque<Integer> arrDq = new ArrayDeque<>(lst);
+		for(int i=5;i<9;i++) {
+			arrDq.addFirst(i);
+		}
+		
+		System.out.println("Initial dequeue - "+arrDq);
+		
+		//contains method
+		System.out.println("Dq contains 43 - ",arrDq.contains(43));
+		
+		//clearing dequeue
+		arrDq.clear();
+		System.out.println("After clearing - "+arrDq);
+	}
+
+}

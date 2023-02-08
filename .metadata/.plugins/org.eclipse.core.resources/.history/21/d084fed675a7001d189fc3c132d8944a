@@ -1,0 +1,5 @@
+package com.pkware.collectionsframework.queueinterface;
+
+public class PriorityQueueProgram {
+
+}

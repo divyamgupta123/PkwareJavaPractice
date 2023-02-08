@@ -1,0 +1,10 @@
+package com.pkware.collectionsframework.queueinterface;
+
+import java.util.PriorityQueue;
+import java.util.Queue;
+
+public class PriorityQueueProgram {
+	public static void main(String[] args) {
+		Queue<Integer> prQueue = new PriorityQueue<>(); 
+	}
+}

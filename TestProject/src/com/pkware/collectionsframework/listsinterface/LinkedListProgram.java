@@ -39,7 +39,7 @@ public class LinkedListProgram {
 		lkdLst.remove();
 		System.out.println("Removing head of list - "+lkdLst);
 		
-		lkdLst.remove(new Integer(25));
+		lkdLst.remove(Integer.valueOf(25));
 		System.out.println("Removing value 25 in list - "+lkdLst);
 		
 		lkdLst.removeFirst();

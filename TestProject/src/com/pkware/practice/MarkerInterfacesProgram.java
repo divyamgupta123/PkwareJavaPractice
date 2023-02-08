@@ -9,6 +9,10 @@ import java.io.Serializable;
 import java.lang.Cloneable;
 
 class MarkerTestClass implements Cloneable,Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	String name;
 	int rollNo;
 

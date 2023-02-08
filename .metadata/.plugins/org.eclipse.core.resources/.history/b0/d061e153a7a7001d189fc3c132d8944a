@@ -1,0 +1,9 @@
+package com.pkware.collectionsframework.queueinterface;
+
+public class ArrayDequeueProgram {
+
+	public static void main(String[] args) {
+		
+	}
+
+}
