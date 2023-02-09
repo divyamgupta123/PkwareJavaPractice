@@ -1,0 +1,371 @@
+package com.pkware.practice;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+/*
+1. A company pays its employees on a weekly basis. The employees are of four types: 
+a. Salaried employees are paid a fixed weekly salary regardless of the number of hours worked, 
+b. hourly employees are paid by the hour and receive overtime pay (i.e., 1.5 times their hourly salary rate) for all hours worked in excess of 40 hours, 
+c. commission employees are paid 15 percent of their sales and 
+d. base-salaried commission employees receive a base salary plus 12 percent of their sales.
+For the current pay period, the company has decided to reward bonus to base-salaried-commission employees by adding 10% to their base salaries.
+Write an java program that performs its payroll calculations.
+​
+Please enhance Payroll application to:
+Take personal data as input such as email, phone etc
+In the end prompt user for employee name and prints its payroll and details
+
+*/
+
+interface EmployeeInterface {
+	void empDetails(String name, String email, String phone);
+
+	double empPayroll();
+
+	String getName();
+
+	String getEmail();
+
+	String getPhone();
+}
+
+class SalariedEmploee implements EmployeeInterface {
+
+	// Salaried employees are paid a fixed weekly salary regardless of the number of
+	// hours worked
+	String name;
+	String email;
+	String phone;
+	final int WEEKLYSALARY = 10000;
+
+	public SalariedEmploee() {
+	}
+
+	public void empDetails(String name, String email, String phone) {
+		this.name = name;
+		this.email = email;
+		this.phone = phone;
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public String getEmail() {
+		return this.email;
+	}
+
+	public String getPhone() {
+		return this.phone;
+	}
+
+	public double empPayroll() {
+		System.out.println("SAL payroll");
+		return WEEKLYSALARY;
+	}
+}
+
+class HourlyEmployee implements EmployeeInterface {
+	// hourly employees are paid by the hour and receive overtime pay
+	// (i.e., 1.5 times their hourly salary rate) for all hours worked in excess of
+	// 40 hours
+
+	String name;
+	String email;
+	String phone;
+	int hoursWorked;
+	final int HOURLYWAGE = 100;
+
+	public HourlyEmployee() {
+	}
+
+	public void empDetails(String name, String email, String phone) {
+		this.name = name;
+		this.email = email;
+		this.phone = phone;
+		this.hoursWorked = 0;
+	}
+
+	public double empPayroll() {
+		System.out.println("HRY payroll");
+		if (hoursWorked <= 40)
+			return hoursWorked * HOURLYWAGE;
+		return (40 * HOURLYWAGE) + (1.5 * HOURLYWAGE * (hoursWorked - 40));
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public String getEmail() {
+		return this.email;
+	}
+
+	public String getPhone() {
+		return this.phone;
+	}
+
+	int getHoursWorked() {
+		return this.hoursWorked;
+	}
+
+	void setHoursWorked(int hoursWorked) {
+		this.hoursWorked = hoursWorked;
+	}
+}
+
+class CommissionedEmployee implements EmployeeInterface {
+
+	// commission employees are paid 15 percent of their sales
+	String name;
+	String email;
+	String phone;
+	double totalSales;
+
+	public CommissionedEmployee() {
+	}
+
+	public void empDetails(String name, String email, String phone) {
+		this.name = name;
+		this.email = email;
+		this.phone = phone;
+		this.totalSales = 0;
+	}
+
+	public double empPayroll() {
+		System.out.println("CMS payroll");
+		return (0.15 * totalSales);
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public String getEmail() {
+		return this.email;
+	}
+
+	public String getPhone() {
+		return this.phone;
+	}
+
+	void setTotalSales(double totalSales) {
+		this.totalSales = totalSales;
+	}
+
+	double getTotalSales() {
+		return this.totalSales;
+	}
+
+}
+
+class BaseSalariedEmployee implements EmployeeInterface {
+
+	// base-salaried commission employees receive a base salary plus 12 percent of
+	// their sales
+	String name;
+	String email;
+	String phone;
+	double totalSales;
+	final int BASESALARY = 1000;
+
+	public BaseSalariedEmployee() {
+	}
+
+	public void empDetails(String name, String email, String phone) {
+		this.name = name;
+		this.email = email;
+		this.phone = phone;
+		this.totalSales = 0;
+	}
+
+	public double empPayroll() {
+		System.out.println("BS payroll");
+		return (BASESALARY + 0.12 * totalSales);
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public String getEmail() {
+		return this.email;
+	}
+
+	public String getPhone() {
+		return this.phone;
+	}
+
+	double getTotalSales() {
+		return this.totalSales;
+	}
+
+	void setTotalSales(double totalSales) {
+		this.totalSales = totalSales;
+	}
+}
+
+class EmployeeFactory {
+	public EmployeeInterface createEmp(Scanner scan, String empType) {
+		String name, email, phone;
+		System.out.print("Enter name of employee - ");
+		name = scan.next();
+		System.out.print("Enter email of employee - ");
+		email = scan.next();
+		System.out.print("Enter phone of employee - ");
+		phone = scan.next();
+
+		EmployeeInterface emp;
+
+		switch (empType) {
+		case "SALEMP":
+			emp = new SalariedEmploee();
+			emp.empDetails(name, email, phone);
+			return emp;
+		case "HRYEMP":
+			emp = new HourlyEmployee();
+			emp.empDetails(name, email, phone);
+			return emp;
+		case "CMSEMP":
+			emp = new CommissionedEmployee();
+			emp.empDetails(name, email, phone);
+			return emp;
+		case "BSEMP":
+			emp = new BaseSalariedEmployee();
+			emp.empDetails(name, email, phone);
+			return emp;
+		default:
+			System.out.println("Wrong choice entered!!!");
+		}
+		return null;
+	}
+}
+
+public class PyrollProblem {
+
+	public static void main(String[] args) {
+		List<EmployeeInterface> empLst = new ArrayList<>();
+
+		Scanner scan = new Scanner(System.in);
+		int mmChoice = -1;
+		EmployeeFactory empFacObj = new EmployeeFactory();
+
+		System.out.println("--------- Program Entered ---------");
+		do {
+			System.out.println();
+			System.out.println("Enter 1 to add an employee");
+			System.out.println("Enter 2 to calculate payroll");
+			System.out.println("Enter 3 to display all employees details");
+			System.out.println("Enter 0 to exit program");
+			System.out.print("Enter choice - ");
+			mmChoice = scan.nextInt();
+
+			switch (mmChoice) {
+			case 1: {
+				double totalSales = 0;
+				int empType = -1;
+				do {
+					System.out.println();
+					System.out.println("Enter 1 to add Salaried Employee");
+					System.out.println("Enter 2 to add Hourly Employee");
+					System.out.println("Enter 3 to add Commissioned Employee");
+					System.out.println("Enter 4 to add Base-Salaried Employee");
+					System.out.println("Enter 0 to continue");
+					System.out.print("Enter choice - ");
+					empType = scan.nextInt();
+
+					switch (empType) {
+					case 1: {
+						EmployeeInterface emp = empFacObj.createEmp(scan, "SALEMP");
+						empLst.add(emp);
+						break;
+					}
+					case 2: {
+						EmployeeInterface emp = empFacObj.createEmp(scan, "HRYEMP");
+						System.out.print("Total hours worked by employee - ");
+						int hoursWorked = scan.nextInt();
+						((HourlyEmployee) emp).setHoursWorked(hoursWorked);
+						empLst.add(emp);
+						break;
+					}
+					case 3: {
+						EmployeeInterface emp = empFacObj.createEmp(scan, "CMSEMP");
+						System.out.print("Total sales done by employee - ");
+						totalSales = scan.nextDouble();
+						((CommissionedEmployee) emp).setTotalSales(totalSales);
+						empLst.add(emp);
+						break;
+					}
+					case 4: {
+						EmployeeInterface emp = empFacObj.createEmp(scan, "BSEMP");
+						System.out.print("Total sales done by employee - ");
+						totalSales = scan.nextDouble();
+						((BaseSalariedEmployee) emp).setTotalSales(totalSales);
+						empLst.add(emp);
+						break;
+					}
+					case 0:
+						break;
+					default:
+						System.out.println("Wrong choice entered!!!");
+					}
+
+				} while (empType != 0);
+			}
+			case 2: {
+				double salEmpPayroll = 0;
+				double hryEmpPayroll = 0;
+				double cmsEmpPayroll = 0;
+				double bsEmpPayroll = 0;
+				for (EmployeeInterface obj : empLst) {
+					if (obj instanceof SalariedEmploee) {
+						salEmpPayroll += obj.empPayroll();
+					} else if (obj instanceof HourlyEmployee) {
+						hryEmpPayroll += obj.empPayroll();
+					} else if (obj instanceof CommissionedEmployee) {
+						cmsEmpPayroll += obj.empPayroll();
+					} else if (obj instanceof BaseSalariedEmployee) {
+						bsEmpPayroll += obj.empPayroll();
+					}
+				}
+
+				System.out.println("Weekly Pyroll for Salaried employees - " + salEmpPayroll);
+				System.out.println("Weekly Pyroll for Hourly employees - " + hryEmpPayroll);
+				System.out.println("Weekly Pyroll for Commissioned employees - " + cmsEmpPayroll);
+				System.out.println("Weekly Pyroll for Base Salaried employees - " + bsEmpPayroll);
+				System.out.println(
+						"Total Weekly Pyroll - " + (salEmpPayroll + hryEmpPayroll + cmsEmpPayroll + bsEmpPayroll));
+				break;
+			}
+
+			case 3: {
+				int count = 1;
+				for (EmployeeInterface obj : empLst) {
+					System.out.println("Employee " + count);
+					System.out.println("Name - " + obj.getName());
+					System.out.println("Email - " + obj.getEmail());
+					System.out.println("Phone - " + obj.getPhone());
+					if (obj instanceof HourlyEmployee) {
+						System.out.println("Hours Worked - " + ((HourlyEmployee) obj).getHoursWorked());
+					} else if (obj instanceof CommissionedEmployee) {
+						System.out.println("Hours Worked - " + ((CommissionedEmployee) obj).getTotalSales());
+					} else if (obj instanceof BaseSalariedEmployee) {
+						System.out.println("Hours Worked - " + ((BaseSalariedEmployee) obj).getTotalSales());
+					}
+					count++;
+				}
+			}
+			case 0:
+				System.out.println("--------- Program Exited ---------");
+				break;
+			default:
+				System.out.println("Wrong choice entered!!!");
+			}
+
+		} while (mmChoice != 0);
+
+		scan.close();
+	}
+}

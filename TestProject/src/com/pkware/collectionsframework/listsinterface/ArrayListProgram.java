@@ -71,6 +71,5 @@ public class ArrayListProgram implements Cloneable {
 		lst.clear();
 		System.out.println("Array list after clearing - "+lst);
 		
-		
 	}
 }
