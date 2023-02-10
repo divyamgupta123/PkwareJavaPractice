@@ -1,0 +1,22 @@
+package com.pkware.collectionsframework.setinterface;
+
+import java.util.TreeSet;
+
+public class TreeSetProgram {
+
+	public static void main(String[] args) {
+		TreeSet<Integer> trSet = new TreeSet<>();
+		
+		trSet.add(0);
+		trSet.add(1);
+		trSet.add(5);
+		trSet.add(8);
+		trSet.add(3);
+		trSet.add(4);
+		trSet.add(0);
+		
+		System.out.println("Initial Tree Set - "+trSet);
+		
+	}
+
+}

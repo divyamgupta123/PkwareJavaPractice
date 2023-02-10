@@ -1,0 +1,20 @@
+package com.pkware.collectionsframework.setinterface;
+
+import java.util.LinkedHashSet;
+
+public class LinkedHashSetProgram {
+	public static void main(String[] args) {
+		LinkedHashSet<String> lkdHashSet = new LinkedHashSet<>();
+		
+		
+		//add operation
+		for(int i=111;i<119;i++) {
+			lkdHashSet.add(String.valueOf(i));
+		}
+		System.out.println("Linked hash set after adding values - "+lkdHashSet);
+		
+		//remove 
+		lkdHashSet.remove("115");
+		System.out.println("After removing 115 - "+lkdHashSet);
+	}
+}

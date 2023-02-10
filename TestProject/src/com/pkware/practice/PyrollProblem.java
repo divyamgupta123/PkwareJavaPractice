@@ -31,7 +31,6 @@ enum EmployeeType {
 	String getEmpTypeCode() {
 		return this.empTypeCode;
 	}
-
 }
 
 interface EmployeeInterface {
@@ -212,6 +211,8 @@ class BaseSalariedEmployee implements EmployeeInterface {
 
 	// base-salaried commission employees receive a base salary plus 12 percent of
 	// their sales
+	//For the current pay period, the company has decided to 
+	//reward bonus to base-salaried-commission employees by adding 10% to their base salaries.
 	String name;
 	String email;
 	String phone;
@@ -231,7 +232,7 @@ class BaseSalariedEmployee implements EmployeeInterface {
 	}
 
 	public double empPayroll() {
-		return (BASESALARY + 0.12 * totalSales);
+		return (1.1*BASESALARY + 0.12 * totalSales);
 	}
 
 	public String getName() {

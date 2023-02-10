@@ -1,0 +1,16 @@
+package com.pkware.collectionsframework.setinterface;
+
+public class HashSetProgram {
+
+	public static void main(String[] args) {
+		/*
+		This class permits the null element. 
+		The class also offers constant time performance for the basic operations 
+		like add, remove, contains, and size assuming the hash function disperses 
+		the elements properly among the buckets,
+		*/
+		
+		 
+	}
+
+}

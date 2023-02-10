@@ -1,0 +1,13 @@
+package com.pkware.collectionsframework.setinterface;
+
+import java.util.TreeSet;
+
+public class TreeSetProgram {
+
+	public static void main(String[] args) {
+		TreeSet<Integer> trSet = new TreeSet<>();
+		
+		
+	}
+
+}

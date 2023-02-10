@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="javax.management.InstanceAlreadyExistsException"/>
-    <fullyQualifiedTypeName name="com.pkware.practice.SingletonClass"/>
-    <fullyQualifiedTypeName name="com.pkware.practice.BoxWeight"/>
-    <fullyQualifiedTypeName name="com.pkware.practice.NewBox"/>
-    <fullyQualifiedTypeName name="com.pkware.practice.NewBoxWeight"/>
-    <fullyQualifiedTypeName name="com.pkware.practice.FinalKeywordProgram"/>
-    <fullyQualifiedTypeName name="com.pkware.practice.NormalClass"/>
-    <fullyQualifiedTypeName name="com.pkware.practice.FinalClass"/>
     <fullyQualifiedTypeName name="com.pkware.practice.FinalMethodClass"/>
     <fullyQualifiedTypeName name="com.pkware.practice.AccModImportClass"/>
     <fullyQualifiedTypeName name="com.pkware.practice.Quadilateral"/>
@@ -30,8 +22,6 @@
     <fullyQualifiedTypeName name="com.pkware.practice.Square"/>
     <fullyQualifiedTypeName name="com.pkware.practice.Directions"/>
     <fullyQualifiedTypeName name="com.pkware.practice.Fruits"/>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
-    <fullyQualifiedTypeName name="java.lang.System"/>
     <fullyQualifiedTypeName name="java.lang.ArithmeticException"/>
     <fullyQualifiedTypeName name="java.lang.StringIndexOutOfBoundsException"/>
     <fullyQualifiedTypeName name="java.lang.NullPointerException"/>
@@ -60,4 +50,14 @@
     <fullyQualifiedTypeName name="java.util.Iterator"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="java.awt.Choice"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="com.pkware.practice.EmployeeFactory"/>
+    <fullyQualifiedTypeName name="com.pkware.practice.SalariedEmploee"/>
+    <fullyQualifiedTypeName name="com.pkware.practice.EmployeeInterface"/>
+    <fullyQualifiedTypeName name="com.pkware.practice.HourlyEmployee"/>
+    <fullyQualifiedTypeName name="com.pkware.practice.BaseSalariedEmployee"/>
+    <fullyQualifiedTypeName name="com.pkware.practice.CommissionedEmployee"/>
+    <fullyQualifiedTypeName name="com.pkware.practice.EmployeeType"/>
 </qualifiedTypeNameHistroy>

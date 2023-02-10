@@ -1,0 +1,10 @@
+package com.pkware.collectionsframework.setinterface;
+
+public class HashSetProgram {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
