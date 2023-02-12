@@ -7,7 +7,6 @@ public class LinkedHashSetProgram {
 	public static void main(String[] args) {
 		LinkedHashSet<String> lkdHashSet = new LinkedHashSet<>();
 		
-		
 		//add operation
 		for(int i=111;i<119;i++) {
 			lkdHashSet.add(String.valueOf(i));

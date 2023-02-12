@@ -41,7 +41,6 @@ public class ArrayListProgram implements Cloneable {
 		ArrayList<Integer> tmpLst = (ArrayList<Integer>)lst.clone();
 		System.out.println("New Cloned List - "+tmpLst);
 		
-		
 		tmpLst.set(1, 100);
 //		tmpLst = (ArrayList<Integer>)tmp;
 		System.out.println("After changing element in cloned list - "+tmpLst);

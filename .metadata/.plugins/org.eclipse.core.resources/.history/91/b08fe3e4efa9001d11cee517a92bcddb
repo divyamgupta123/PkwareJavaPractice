@@ -1,0 +1,39 @@
+package com.pkware.mapframework;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class HashMapProgram {
+
+	public static void main(String[] args) {
+		Map<Integer, String> hashMap = new HashMap<>();
+		
+		hashMap.put(1, "one");
+		hashMap.put(2, "two");
+		hashMap.put(3, "three");
+		hashMap.put(4, "four");
+		hashMap.put(5, "five");
+		hashMap.put(6, "six");
+		hashMap.put(7, "seven");
+		hashMap.put(8, "eight");
+		
+		System.out.println("Initial map - "+hashMap);
+		
+		//traversing map
+		System.out.println("Traversing the map - ");
+		for(Map.Entry<Integer, String> mp:hashMap.entrySet()) {
+			System.out.println(mp.getKey()+" : "+mp.getValue());
+		}
+		
+		//changing element
+		hashMap.put(8, "eight Eight");
+		System.out.println("After Changing - "+hashMap);
+		
+		//removing elements
+		hashMap.remove(8);
+		hashMap.remove(7,"seven");
+		System.out.println("After removing elements - "+hashMap);
+
+	}
+
+}
