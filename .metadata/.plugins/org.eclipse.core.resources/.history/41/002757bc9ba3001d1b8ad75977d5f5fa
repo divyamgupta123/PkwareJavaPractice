@@ -1,9 +1,0 @@
-package com.pkware.practice;
-
-public class InterfacesPracticeProgram {
-
-	public static void main(String[] args) {
-
-	}
-
-}

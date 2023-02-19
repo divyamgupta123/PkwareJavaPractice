@@ -3,7 +3,6 @@ package com.pkware.practice;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
 /*
 1. A company pays its employees on a weekly basis. The employees are of four types: 
 a. Salaried employees are paid a fixed weekly salary regardless of the number of hours worked, 

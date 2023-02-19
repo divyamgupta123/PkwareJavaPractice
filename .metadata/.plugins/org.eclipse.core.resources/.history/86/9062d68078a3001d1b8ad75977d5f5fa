@@ -1,7 +1,0 @@
-package com.pkware.practice;
-
-public class MethodOverridingProgram {
-	public static void main(String[] args) {
-		
-	}
-}

@@ -1,7 +1,0 @@
-package com.pkware.practice;
-
-public class ExceptionHandlingProgram {
-	public static void main(String[] args) {
-
-	}
-}

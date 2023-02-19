@@ -1,7 +1,0 @@
-package com.pkware.collectionsframework.setinterface;
-
-public class LinkedHashSetProgram {
-	public static void main(String[] args) {
-
-	}
-}

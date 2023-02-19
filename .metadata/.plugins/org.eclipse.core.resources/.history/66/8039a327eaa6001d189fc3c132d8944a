@@ -1,7 +1,0 @@
-package com.pkware.collectionsframework.listsinterface;
-
-public class LinkedListProgram {
-	public static void main(String[] args) {
-
-	}
-}
