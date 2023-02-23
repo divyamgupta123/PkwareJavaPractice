@@ -1,0 +1,2 @@
+Hey, this is a new new text file made using JAVA file handling!!!
+ I have written this to fileI am using JDK version 11

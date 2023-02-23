@@ -32,6 +32,7 @@ public class ConstructorProgram {
 
 	public static void main(String[] args) {
 		Company cmp1 = new Company();
+		System.out.println(System.getProperty("java.runtime.version"));
 		System.out.println();
 		Company cmp2 = new Company("Pkware",200);
 		System.out.println();
