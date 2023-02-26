@@ -15,7 +15,7 @@ class thread implements Runnable {
             "State of thread1 while it called join() method on thread2 -"
             + ThreadStatesProgram.thread1.getState());
         try {
-            Thread.sleep(200);
+            Thread.sleep(2000);
         }
         catch (InterruptedException e) {
             e.printStackTrace();
@@ -65,7 +65,7 @@ public class ThreadStatesProgram implements Runnable {
         // moving thread1 to timed waiting state
         try {
             // moving thread1 to timed waiting state
-            Thread.sleep(200);
+            Thread.sleep(2000);
         }
         catch (InterruptedException e) {
             e.printStackTrace();

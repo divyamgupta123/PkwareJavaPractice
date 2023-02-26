@@ -21,7 +21,7 @@ public class UserService {
 	}
 
 	public User ifUserExist(User reqData) {
-		return userRepository.findByName(reqData.getName());
+		return userRepository.findByPassword(reqData.getPassword());
 	}
 
 	public Object getUserById(Long id) {

@@ -50,6 +50,5 @@ public class Course {
 
 	public Course() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 }

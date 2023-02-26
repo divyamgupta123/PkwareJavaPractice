@@ -100,7 +100,6 @@ public class InterfacesPracticeProgram {
 //			
 //			@Override
 //			public void printSides(int sides) {
-//				// TODO Auto-generated method stub
 //				
 //			}
 //		};

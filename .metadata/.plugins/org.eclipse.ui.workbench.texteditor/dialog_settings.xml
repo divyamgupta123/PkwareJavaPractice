@@ -10,6 +10,8 @@
 		<item key="wholeword" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="find"/>
+			<item value="fi"/>
 			<item value="removeEldest"/>
 			<item value=""/>
 		</list>
