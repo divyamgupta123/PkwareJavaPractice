@@ -1,8 +1,12 @@
 package HibernatePractice.model;
 
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -22,6 +26,17 @@ public class User {
 	@Column(name = "password", nullable = false, unique = true)
 	String password;
 	
+	@OneToMany(fetch = FetchType.LAZY,mappedBy = "user")
+	private Set<WebsiteAccount> accountsList;
+	
+	public Set<WebsiteAccount> getAccountsList() {
+		return accountsList;
+	}
+
+	public void setAccountsList(Set<WebsiteAccount> accountsList) {
+		this.accountsList = accountsList;
+	}
+
 	public User() {
 		super();
 	}

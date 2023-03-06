@@ -4,12 +4,7 @@
           "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">  
 <hibernate-configuration> 
     <session-factory>  
-        <property name = "hibernate.connection.driver_class">org.postgresql.Driver</property>
-        <property name = "hibernate.connection.url">jdbc:postgresql://localhost:5432/passmanager</property>
-        <property name = "hibernate.connection.username">postgres</property>
-        <property name = "hibernate.connection.password">root</property>
-        <property name = "hibernate.connection.poolsize">3</property>
-        <property name = "hibernate.connection.show_sql">true</property>
         <mapping class = "HibernatePractice.model.User" ></mapping>
+        <mapping class = "HibernatePractice.model.WebsiteAccount" ></mapping>
     </session-factory>  
 </hibernate-configuration>  

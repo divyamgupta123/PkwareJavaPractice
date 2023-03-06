@@ -7,17 +7,11 @@ import java.util.Scanner;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-import org.hibernate.cfg.Configuration;
-import org.hibernate.service.ServiceRegistry;
-
 import HibernatePractice.model.User;
 
 public class ManageUser {
 
-	private static SessionFactory factory;
-
-	public boolean addUser(String firstName, String lastName, String email, String password) {
+	public boolean addUser(SessionFactory factory, String firstName, String lastName, String email, String password) {
 		Session session = factory.openSession();
 		Transaction trx = null;
 
@@ -39,7 +33,7 @@ public class ManageUser {
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<User> getAllUsers() {
+	public List<User> getAllUsers(SessionFactory factory) {
 		Session session = factory.openSession();
 		List<User> userList = null;
 		try {
@@ -52,7 +46,7 @@ public class ManageUser {
 		return userList;
 	}
 
-	public boolean updateUser(User user, String email, HashMap<String, String> mp) {
+	public boolean updateUser(SessionFactory factory, User user, HashMap<String, String> mp) {
 		Session session = factory.openSession();
 		Transaction trx = null;
 		try {
@@ -81,7 +75,7 @@ public class ManageUser {
 		return true;
 	}
 
-	public boolean deleteUser(User user, String email) {
+	public boolean deleteUser(SessionFactory factory, User user) {
 		Session session = factory.openSession();
 		Transaction trx = null;
 		try {
@@ -100,7 +94,7 @@ public class ManageUser {
 		return true;
 	}
 
-	private void viewUserDetails(User user) {
+	public void viewUserDetails(User user) {
 		System.out.println();
 		System.out.println("User email - " + user.getEmail());
 		System.out.println("User first name - " + user.getFirstName());
@@ -108,7 +102,7 @@ public class ManageUser {
 		System.out.println("User password - " + user.getPassword());
 	}
 
-	private User getUser(String email) {
+	public User getUser(SessionFactory factory, String email) {
 		User user = null;
 		Session session = factory.openSession();
 		try {
@@ -121,15 +115,17 @@ public class ManageUser {
 		return user;
 	}
 
-	private boolean updateUserHelper(Scanner scan, ManageUser manageUser) {
+	public boolean updateUserHelper(SessionFactory factory,Scanner scan) {
+
 		System.out.println();
 		HashMap<String, String> mp = new HashMap<>();
 		String email;
 		System.out.print("Enter email of the user to be updated - ");
 		email = scan.next();
-		User user = manageUser.getUser(email);
+		User user = getUser(factory, email);
 		if (user == null) {
 			System.out.println("User do not exist");
+			scan.close();
 			return false;
 		}
 
@@ -161,10 +157,10 @@ public class ManageUser {
 
 		} while (option2 != 3);
 
-		return manageUser.updateUser(user, email, mp);
+		return updateUser(factory, user, mp);
 	}
 
-	private boolean addUserHelper(Scanner scan, ManageUser manageUser) {
+	public boolean addUserHelper(SessionFactory factory,Scanner scan) {
 
 		String firstName;
 		String lastName;
@@ -183,143 +179,20 @@ public class ManageUser {
 		System.out.print("Enter password - ");
 		password = scan.next();
 
-		String hashValue = HashPassword.get_SHA_512_SecurePassword(password);
+		String hashValue = HashPassword.getPasswordHash(password);
 
-		boolean isSuccess = manageUser.addUser(firstName, lastName, email, hashValue);
+		boolean isSuccess = addUser(factory, firstName, lastName, email, hashValue);
 		return isSuccess;
 
 	}
-
-	public static void main(String[] args) {
-		try {
-			Configuration configuration = new Configuration();
-			configuration.configure("hibernate.cfg.xml");
-			System.out.println(" ----------- Configuration File loaded successfully ----------- ");
-
-			ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
-					.applySettings(configuration.getProperties()).build();
-			System.out.println(" ----------- Service Registry Created ----------- ");
-
-			factory = configuration.buildSessionFactory(serviceRegistry);
-
-		} catch (Exception e) {
-			System.err.println("Failed to create factory object");
-			e.printStackTrace();
+	
+	public User isUserRegistered(SessionFactory factory, String email) {
+		User user = getUser(factory, email);
+		if (user == null) {
+			System.out.println("User do not exist");
+			return null;
 		}
-
-		ManageUser manageUser = new ManageUser();
-		Scanner scan = new Scanner(System.in);
-
-		int option = -1;
-
-		System.out.println("-------------- Program Started --------------");
-
-		do {
-			System.out.println();
-			System.out.println("Enter 1 to add a user");
-			System.out.println("Enter 2 to update a user");
-			System.out.println("Enter 3 to delete a user");
-			System.out.println("Enter 4 to view a user's details");
-			System.out.println("Enter 5 to view all users details");
-			System.out.println("Enter 6 to verify a user");
-			System.out.println("Enter 7 to exit program");
-			System.out.print("Enter option - ");
-			option = scan.nextInt();
-
-			switch (option) {
-			case 1: {
-				System.out.println();
-				boolean isSuccess = manageUser.addUserHelper(scan, manageUser);
-				if (!isSuccess) {
-					System.out.println("User not added. Try again");
-				}
-				break;
-			}
-
-			case 2: {
-				boolean isSuccess = manageUser.updateUserHelper(scan, manageUser);
-				if (!isSuccess) {
-					System.out.println("User not updated. Try again");
-				}
-				break;
-			}
-
-			case 3: {
-				String email;
-				System.out.print("Enter email of the user to be deleted - ");
-				email = scan.next();
-				User user = manageUser.getUser(email);
-				if (user == null) {
-					System.out.println("User do not exist");
-					break;
-				}
-
-				boolean isSuccess = manageUser.deleteUser(user, email);
-				if (!isSuccess) {
-					System.out.println("User not deleted. Try again");
-				}
-				break;
-			}
-
-			case 4: {
-				String email;
-				System.out.print("Enter email of the user - ");
-				email = scan.next();
-
-				User user = manageUser.getUser(email);
-
-				if (user == null) {
-					System.out.println("User do not exist");
-					break;
-				}
-
-				manageUser.viewUserDetails(user);
-				break;
-			}
-			case 5:
-				List<User> usersList = manageUser.getAllUsers();
-				if (usersList.size() == 0) {
-					System.out.println("No users registered!!!");
-					break;
-				}
-				for (User user : usersList) {
-					System.out.println("Total registered users - " + usersList.size());
-					manageUser.viewUserDetails(user);
-				}
-				break;
-
-			case 6: {
-				String email, password;
-				System.out.print("Enter email - ");
-				email = scan.next();
-
-				User user = manageUser.getUser(email);
-				if (user == null) {
-					System.out.println("User do not exist!!!");
-					break;
-				}
-
-				System.out.print("Enter password - ");
-				password = scan.next();
-
-				String hashPass = HashPassword.get_SHA_512_SecurePassword(password);
-
-				if (user.getPassword().equals(hashPass))
-					System.out.println("User verified successfully");
-				else
-					System.out.println("Wrong Password. Try again");
-
-				break;
-			}
-			case 7:
-				System.out.println("-------------- Program Exit --------------");
-				break;
-			default:
-				System.out.println("Enter correct option");
-			}
-
-		} while (option != 7);
-
-		scan.close();
+		return user;
 	}
+
 }

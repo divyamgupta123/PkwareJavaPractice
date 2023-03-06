@@ -5,12 +5,11 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class HashPassword {
-	public static String get_SHA_512_SecurePassword(String passwordToHash) {
+	public static String getPasswordHash(String passwordToHash) {
 		String generatedPassword = null;
-		String salt = "@andrhi$!";
 		try {
-			MessageDigest md = MessageDigest.getInstance("SHA-512");
-			md.update(salt.getBytes(StandardCharsets.UTF_8));
+			MessageDigest md = MessageDigest.getInstance(Constants.HASHALGO);
+			md.update(Constants.HASHSALT.getBytes(StandardCharsets.UTF_8));
 			byte[] bytes = md.digest(passwordToHash.getBytes(StandardCharsets.UTF_8));
 			StringBuilder sb = new StringBuilder();
 			for (int i = 0; i < bytes.length; i++) {
@@ -22,4 +21,5 @@ public class HashPassword {
 		}
 		return generatedPassword;
 	}
+	
 }
